@@ -1,0 +1,34 @@
+
+
+import java.util.Scanner;
+
+public class testes {
+  public static void main(String[] args){
+      
+      Scanner input = new Scanner(System.in);
+      
+      int[] vetor = new int[10];
+      int vetorAux;
+      boolean controle;
+      for(int i=0; i<vetor.length;i++){
+          System.out.println("Digite um valor");
+          vetor[i]=input.nextInt();
+      }
+      for(int i=0; i<vetor.length; i++){
+          controle = true;
+          for(int j=0; j<(vetor.length -1); j++){
+              if(vetor[j]>vetor[j+1]){
+                  vetorAux = vetor[j+1];
+                  vetor[j+1] = vetor[j];
+                  vetor[j] = vetorAux;
+                  controle = false;
+              }
+          }
+          if(controle){
+              break;
+          }
+      }
+      System.out.println("O menor valor é "+vetor[0]);
+      System.out.println("O maior valor é "+vetor[9]);
+  }   
+}
